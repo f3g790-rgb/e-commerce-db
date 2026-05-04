@@ -14,7 +14,7 @@ Given that it’s for ecommerce, the system will need to track individual items,
 
 ## ER diagram 
 
-// PIRCTURE OF THE DIAGRAM HERE - or link yk
+https://dbdiagram.io/d/E-Commerce-Diagram-69b37bdda9fdf1293d16c27e
 
 ## Key Relationships
 
