@@ -7,12 +7,12 @@ INSERT INTO Organizations (org_name, owner_email, created_at) VALUES
     ('BookNook',        'hello@booknook.com',     '2023-09-12 10:15:00');
 
 -- Employees
-INSERT INTO Employees (employee_id, ssn, full_name, role, hire_date, org_id) VALUES
-    (1, 111223333, 'Alice Johnson', 'Manager',   '2023-02-01', 1),
-    (2, 222334444, 'Bob Martinez',  'Sales Rep', '2023-04-10', 2),
-    (3, 333445555, 'Carol Lee',     'Support',   '2023-06-15', 3),
-    (4, 444556666, 'David Kim',     'Sales Rep', '2023-08-20', 4),
-    (5, 555667777, 'Eva Nguyen',    'Manager',   '2023-10-05', 5);
+INSERT INTO Employees (employee_id, ssn, full_name, role, salary, hire_date, org_id) VALUES
+    (1, 111223333, 'Alice Johnson', 'Manager',   75000, '2023-02-01', 1),
+    (2, 222334444, 'Bob Martinez',  'Sales Rep', 50000, '2023-04-10', 2),
+    (3, 333445555, 'Carol Lee',     'Support',   45000, '2023-06-15', 3),
+    (4, 444556666, 'David Kim',     'Sales Rep', 50000, '2023-08-20', 4),
+    (5, 555667777, 'Eva Nguyen',    'Manager',   75000, '2023-10-05', 5);
 
 -- Customers
 INSERT INTO Customers (name, email, created_at) VALUES
@@ -43,21 +43,20 @@ INSERT INTO Products (price, name, stock_quantity, org_id, category_id) VALUES
     (29.99,  'The Art of SQL',          500, 5, 5),
     (34.99,  'Clean Code',              420, 5, 5);
 
--- OrderStatus
+-- OrderStatus 
 INSERT INTO OrderStatus (status_name) VALUES
-    ('Pending'),
-    ('Processing'),
-    ('Shipped'),
-    ('Delivered'),
-    ('Cancelled');
+    ('PENDING'),
+    ('PROCESSING'),
+    ('CANCEL'),
+    ('COMPLETED');
 
--- Orders
+-- Orders 
 INSERT INTO Orders (order_date, customer_id, employee_id, status_id) VALUES
     ('2024-03-01 10:30:00', 1, 1, 4),
-    ('2024-03-05 14:00:00', 2, 2, 3),
+    ('2024-03-05 14:00:00', 2, 2, 2),
     ('2024-03-10 09:15:00', 3, NULL, 2),
     ('2024-03-12 11:45:00', 4, 3, 1),
-    ('2024-03-15 16:30:00', 5, 4, 5);
+    ('2024-03-15 16:30:00', 5, 4, 3);
 
 -- OrderItems
 INSERT INTO OrderItems (order_id, product_id, quantity) VALUES
@@ -69,10 +68,10 @@ INSERT INTO OrderItems (order_id, product_id, quantity) VALUES
     (4, 4, 1),
     (5, 2, 1);
 
--- Reviews
-INSERT INTO Reviews (review_id, rating) VALUES
-    (1, 5),
-    (2, 4),
-    (3, 4),
-    (4, 5),
-    (5, 3);
+-- Reviews 
+INSERT INTO Reviews (review_id, rating, customer_id, product_id) VALUES
+    (1, 5, 1, 1),
+    (2, 4, 1, 9),
+    (3, 4, 2, 3),
+    (4, 5, 2, 7),
+    (5, 3, 3, 5);
